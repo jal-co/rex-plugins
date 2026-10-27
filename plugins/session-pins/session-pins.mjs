@@ -120,7 +120,7 @@ export function watchPins(file = pinStateFile()) {
   });
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+if (import.meta.main) {
   const [action, id] = process.argv.slice(2);
   if (action === 'watch') watchPins();
   else console.log(JSON.stringify(changePin(action, id)));

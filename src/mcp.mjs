@@ -1,4 +1,3 @@
-import { fileURLToPath } from 'node:url';
 import { Manager } from './manager.mjs';
 import { callTool, toolDefinitions } from './tools.mjs';
 
@@ -50,4 +49,4 @@ export function serve(manager, input = process.stdin, output = process.stdout) {
   input.on('error', (error) => { process.stderr.write(`${error.message}\n`); process.exitCode = 1; });
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) serve(new Manager());
+if (import.meta.main) serve(new Manager());

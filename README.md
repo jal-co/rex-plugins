@@ -17,11 +17,11 @@ Nothing here installs itself, changes Rex configuration, reloads an existing age
 - Call the same operations through a CLI, stdio MCP, or an optional Pi extension.
 - Use the extracted session-pinning plugin without Pi.
 
-There are no runtime dependencies beyond Node 24+, Git for worktrees, and Rex for terminal operations. The task core does not import Pi, Herdr, or a model SDK.
+There are no runtime dependencies beyond Node 24.2+, Git for worktrees, and Rex for terminal operations. The task core does not import Pi, Herdr, or a model SDK.
 
 ## Install
 
-Requires Node.js 24 or newer, Git, and a running local [Rex](https://www.superlogical.com/rex/docs/installation) server on macOS or Linux. Linux has not yet been live-tested. Run these commands in a Rex terminal so `rex` is on your PATH:
+Requires Node.js 24.2 or newer, Git, and a running local [Rex](https://www.superlogical.com/rex/docs/installation) server on macOS or Linux. Linux has not yet been live-tested. Run these commands in a Rex terminal so `rex` is on your PATH:
 
 ```sh
 node --version

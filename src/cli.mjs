@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict';
 import { readFileSync, watch } from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import { Manager } from './manager.mjs';
 import { Store, cleanText, readJson, terminalStates } from './store.mjs';
 import { capabilities } from './adapters.mjs';
@@ -55,6 +54,6 @@ export async function main(args) {
   console.log(JSON.stringify(result, null, 2));
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+if (import.meta.main) {
   try { await main(process.argv.slice(2)); } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

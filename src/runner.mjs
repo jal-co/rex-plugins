@@ -2,7 +2,6 @@ import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createWriteStream, mkdirSync, watch } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { Store, readJson, writeJson } from './store.mjs';
 import { processIdentity } from './process.mjs';
 import { programStatus } from './status.mjs';
@@ -76,7 +75,7 @@ export async function run(root, id) {
   }
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+if (import.meta.main) {
   const [flag, root, id] = process.argv.slice(2);
   assert.equal(flag, '--root');
   try { await run(root, id); } catch (error) { process.stderr.write(`${error.message}\n`); process.exitCode = 1; }
