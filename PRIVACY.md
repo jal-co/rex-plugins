@@ -1,6 +1,6 @@
 # Privacy boundary
 
-This repository is private. Publishing source to the owner's private GitHub repository is explicitly authorized. Public release, package publication, vendor feedback submissions and telemetry integration are not authorized.
+The owner has authorized public source publication at `https://github.com/jal-co/rex-plugins`. That authorization covers the reviewed source and documentation, not private runtime data. Package-registry publication, vendor feedback submissions and telemetry integration remain separate decisions.
 
 Superlogical's documentation MCP may receive generic questions about public Rex APIs. It must not receive private source code, prompts, terminal captures, task names, project names, logs, credentials or internal issue/PR details. Documentation lookup is separate from local terminal control.
 

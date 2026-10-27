@@ -19,6 +19,43 @@ Nothing here installs itself, changes Rex configuration, reloads an existing age
 
 There are no runtime dependencies beyond Node 24+, Git for worktrees, and Rex for terminal operations. The task core does not import Pi, Herdr, or a model SDK.
 
+## Install
+
+Requires Node.js 24 or newer, Git, and a running local [Rex](https://www.superlogical.com/rex/docs/installation) server on macOS or Linux. Linux has not yet been live-tested. Run these commands in a Rex terminal so `rex` is on your PATH:
+
+```sh
+node --version
+rex whoami --json
+git clone https://github.com/jal-co/rex-plugins.git
+cd rex-plugins
+npm test
+node src/cli.mjs help
+node src/cli.mjs adapters
+```
+
+There are no npm dependencies to install and no install scripts. Cloning does not register tools, start a service, change Rex settings, or replace an existing coordinator. This is a source checkout, not a published npm package; `package.json` keeps `private: true` to prevent accidental npm publication.
+
+For an MCP-capable coding agent, use the [MCP configuration](#mcp) below. Get the absolute entry path from your clone with:
+
+```sh
+printf '%s/src/cli.mjs\n' "$PWD"
+```
+
+For Pi, opt in for one new session without changing persistent settings:
+
+```sh
+pi --extension "$PWD/adapters/pi-extension.ts"
+```
+
+To update a clean checkout:
+
+```sh
+git pull --ff-only
+npm test
+```
+
+Restart only the client that loaded this plugin after updating. Existing launched tasks remain independent. Do not restart or replace another coordinator to try it.
+
 ## Try it separately
 
 Create a JSON launch file outside your repository:
@@ -153,4 +190,4 @@ The live test creates two disposable Rex sessions, checks nested panes, terminal
 5. Extract PR tracking and the cross-task overview without personal paths or Pi transcript assumptions.
 6. Opt-in migration and comparison against the current coordinator. Only replace it after approval.
 
-See [architecture](docs/architecture.md), [Rex evidence](docs/rex-evidence.md), and [provenance](PROVENANCE.md).
+See [architecture](docs/architecture.md), [Rex evidence](docs/rex-evidence.md), [privacy](PRIVACY.md), and [provenance](PROVENANCE.md).

@@ -6,4 +6,4 @@ The task runtime, shared CLI/MCP tools, adapter boundary and nested task panels 
 
 The current Pi-specific coordinator remains in dotfiles. Its runtime records, private session transcripts, PR database, Git checkouts, credentials and personal configuration were not copied into this repository.
 
-This is a private repository. A distribution license and upstream attribution review are required before public redistribution, especially if later stages reuse code from the existing Herdr-derived host.
+Public source publication is authorized by the owner. The extracted pinning files were reviewed against their dotfiles source; this repository contains no copied Herdr host code. No distribution license has been selected. Public visibility alone does not grant an open-source license. Any later reuse of the Herdr-derived host requires its license and attribution to be retained.
